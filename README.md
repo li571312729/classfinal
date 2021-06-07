@@ -3,8 +3,6 @@
 ## 介绍
 ClassFinal是一款java class文件安全加密工具，支持直接加密jar包或war包，无需修改任何项目代码，兼容spring-framework；可避免源码泄漏或字节码被反编译。
 
-##### Gitee: https://gitee.com/roseboy/classfinal
-
 ## 项目模块说明
 * **classfinal-core:** ClassFinal的核心模块，几乎所有加密的代码都在这里；
 * **classfinal-fatjar:** ClassFinal打包成独立运行的jar包；
