@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <groupId>net.roseboy</groupId>
+    <artifactId>classfinal</artifactId>
+    <version>1.2.1</version>
+    <modules>
+        <module>classfinal-core</module><!--主要代码在这里-->
+        <module>classfinal-fatjar</module><!--单独运行的jar、javaagent-->
+<!--        <module>classfinal-web</module>&lt;!&ndash;webUI&ndash;&gt;-->
+        <module>classfinal-maven-plugin</module><!--maven插件-->
+    </modules>
+    <packaging>pom</packaging>
+
+
+    <name>ClassFinal</name>
+    <description>java class文件加密</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://gitee.com/roseboy/classfinal.git</url>
+        <connection>https://gitee.com/roseboy/classfinal.git</connection>
+        <developerConnection>roseboy.net</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <name>roseboy</name>
+            <email>roseboy@live.com</email>
+        </developer>
+    </developers>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>sonatype-nexus-staging</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
